@@ -109,16 +109,16 @@ async function run() {
       res.send(result);
     })
 
+    app.get('/', (req, res) => {
+      res.send('Hello World! Welcome to Coffee store espresso emporium!!')
+    })
+
+    app.listen(port, () => {
+        console.log(`your coffee store server is running on http://localhost:${port}`)
+    })
+
   } finally {
     // await client.close();
   }
 }
 run().catch(console.dir);
-
-
-app.get('/', (req, res) => {
-    res.send('Hello World! Welcome to Coffee store espresso emporium!!')
-})
-app.listen(port, () => {
-    console.log(`your coffee store server is running on http://localhost:${port}`)
-})
